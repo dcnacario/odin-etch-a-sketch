@@ -2,8 +2,13 @@
 const container = document.querySelector(".container");
 const setting = document.querySelector(".setting");
 const btnAsk = document.createElement("button");
+const btnRandom = document.createElement("button");
 const btnAskText = document.createTextNode("How many Per Rows");
+const btnRandText = document.createTextNode("Rainbow");
 btnAsk.appendChild(btnAskText);
+btnRandom.appendChild(btnRandText);
+btnRandom.setAttribute("class","btnrand");
+setting.appendChild(btnRandom);
 setting.appendChild(btnAsk);
 
 
@@ -53,7 +58,22 @@ console.log(childContainer);
 
 parentContainer.addEventListener("mouseover", (event)=>{
     const childElement = event.target;
-    
+    btnRandom.addEventListener("click",()=>{
+        parentContainer.addEventListener("mouseover",(event)=>{
+            const randElement = event.target;
+            for (let j = 0; j < childContainer.length; j++) {
+                if (randElement === childContainer[j]) {
+                    let x = Math.floor(Math.random() * 256);
+                    let y = Math.floor(Math.random() * 256);
+                    let z = Math.floor(Math.random() * 256);
+                    let bgcolor = `rgba(${x}+${y}+${z})`;
+                    childContainer[j].style.backgroundColor = bgcolor;
+                }
+            }
+        });
+
+    });
+
     for (let j = 0; j < childContainer.length; j++) {
         if (childElement === childContainer[j]) {
           childContainer[j].style.backgroundColor = '#7D7C7C';
