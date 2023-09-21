@@ -1,5 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
 * {
     box-sizing: border-box;
+    font-family: 'Sriracha', cursive;
+}
+
+
+body {
+    overflow: hidden;
+}
+h2 {
+    font-size: 42px;
+    color: #191717;
+}
+
+button {
+    border-radius: 4px;
+    border: none;
+    padding: 10px;
+    background-color: #7D7C7C;
+    color: #F1EFEF;
+    font-weight: 700;
+    font-size: 18px;
+    margin-top: -20px;
+}
+
+button:hover {
+    background-color: #191717;
+    cursor: pointer;
 }
 
 body {
@@ -7,6 +35,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 14px;
 }
 
 .container {
@@ -14,5 +43,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 10px;
+    background-color: #F1EFEF;
+    border-radius: 8px;
 }
 
